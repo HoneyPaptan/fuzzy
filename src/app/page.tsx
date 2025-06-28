@@ -1,11 +1,11 @@
+import { caller } from "@/trpc/server";
 
 const Page = async () => {
-  
+  const data = await caller.hello({text: "honey server"}); 
   return ( 
     <div>
-      <p>
-        hello
-      </p>
+     {JSON.stringify(data)}
+       
     </div>
    );
 }
